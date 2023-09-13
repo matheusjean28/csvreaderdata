@@ -1,0 +1,4 @@
+Id,Model,Mac,Data,RemoteAccess,Problem
+1,Modelo1,00:11:22:33:44:55,"AQUI_VAI_UMA_STRING_BINARIA",true,false
+2,Modelo2,11:22:33:44:55:66,"OUTRA_STRING_BINARIA",false,true
+3,Modelo3,22:33:44:55:66:77,"MAIS_UMA_STRING_BINARIA",true,false
