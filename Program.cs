@@ -1,28 +1,18 @@
-﻿using System.Globalization;
+﻿using System;
 using CsvHelper;
 using CsvHelper.Configuration;
 using DeviceCsv.Model;
+using ReadCsvFuncs;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
-
-var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+class Program
 {
-    PrepareHeaderForMatch = args => args.Header.ToLower(),
-};
-using var reader = new StreamReader("Data/FileToRead.csv");
-
-
-
-using (var csv = new CsvReader(reader, config))
-{
-    var records = csv.GetRecords<Device>();
-
-    foreach (var device in records )
+    public  static async Task  Main(string[] args)
     {
-        Console.WriteLine($"Model: {device.Model}\nMac: {device.Mac}\nProblem: {device.Problem}\nRemoteAcess: {device.RemoteAcess}\nDescription: {device.Data}\n\r");
-        
+        ReadCsv read = new();
+        await read.ReadCsvItens();
     }
 }
-
-
-
-

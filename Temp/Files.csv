@@ -1,0 +1,16 @@
+Model: Modelo1
+Mac: 00:11:22:33:44:55
+Problem: False
+RemoteAcess: True
+Description: AQUI_VAI_UMA_STRING_BINARIA
+Model: Modelo2
+Mac: 11:22:33:44:55:66
+Problem: True
+RemoteAcess: False
+Description: OUTRA_STRING_BINARIA
+Model: Modelo3
+Mac: 22:33:44:55:66:77
+Problem: False
+RemoteAcess: True
+Description: MAIS_UMA_STRING_BINARIA
+
