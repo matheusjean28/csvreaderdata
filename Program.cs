@@ -10,9 +10,13 @@ using System.Linq;
 
 class Program
 {
-    public  static async Task  Main(string[] args)
+    public  static void  Main(string[] args)
     {
-        ReadCsv read = new();
-        await read.ReadCsvItens();
+    Task.Run(async () =>
+        {
+            ReadCsv read = new();
+            await read.ReadCsvItens();
+        }).GetAwaiter().GetResult();
+        
     }
 }
