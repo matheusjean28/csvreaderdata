@@ -13,14 +13,7 @@ namespace ReadCsvFuncs
         private readonly string folderName = "Temp";
         private readonly string folderPath = Directory.GetCurrentDirectory();
 
-        public class FooMap : ClassMap<MacToDatabase>
-        {
-            public FooMap()
-            {
-                Map(m => m.Id).Name("id");
-                Map(m => m.Model).Name("Model");
-            }
-        }
+      
 
         public async Task<IEnumerable<MacToDatabase>> ReadCsvItens()
         {
