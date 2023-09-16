@@ -1,5 +1,8 @@
+using MacToDatabaseModel;
 namespace Read.Interfaces
 {
-    public interface Iread
-    {}
+    public interface IRead
+    {
+         Task<IEnumerable<MacToDatabase>>ReadCsvItens();
+};
 }
