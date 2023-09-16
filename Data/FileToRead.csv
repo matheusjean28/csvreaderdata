@@ -30,4 +30,4 @@ Id,Model,Mac,Data,RemoteAccess,Problem
 29,Modelo29,CC:DD:EE:FF:00:11,"MAIS_UMA_STRING_BINARIA",true,false
 30,Modelo30,DD:EE:FF:00:11:22,"STRING_BINARIA_AQUI",false,true
 31,Modelo31,EE:FF:00:11:22:33,"OUTRA_STRING_BINARIA",true,false
-32,Modelo32,FF:00:11:22:33:44,"STRING_BINARIA_AQUI",false,true
+32,Modelo32,FF:00:3a:44,"1235",false,true
