@@ -75,6 +75,7 @@ namespace ReadCsvFuncs
                         
                         await File.AppendAllTextAsync(Path.Combine(_folderPath, "Error.csv"), errorMessage);
                         continue;
+                        
                     }
                     else
                     {
