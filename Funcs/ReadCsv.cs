@@ -1,5 +1,6 @@
 using MacToDatabaseModel;
 using System.Text.RegularExpressions;
+using InmemoryDb;
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -13,9 +14,9 @@ namespace ReadCsvFuncs
         private readonly string folderName = "Temp";
         private readonly string folderPath = Directory.GetCurrentDirectory();
 
-      
 
-        public async Task<IEnumerable<MacToDatabase>> ReadCsvItens()
+
+        public async Task<IEnumerable<MacToDatabase>> ReadCsvItens(MacContext db) 
         {
             var _folderPath = folderPath;
             if (!Directory.Exists(folderName))
@@ -65,10 +66,9 @@ namespace ReadCsvFuncs
                     if (device.Model.Length <= 0 || device.Model.Length >= 99)
                     {
                         string errorMessage = $"[Error Occurred at {DateTime.Now}] - Invalid Model: {device.Model}, MAC: {device.Mac}";
-                        
+
                         await File.AppendAllTextAsync(Path.Combine(_folderPath, "Error.csv"), errorMessage);
                         continue;
-                        
                     }
                     else
                     {
@@ -82,14 +82,14 @@ namespace ReadCsvFuncs
                     await File.AppendAllTextAsync(Path.Combine(_folderPath, "Error.csv"), errorMessage);
                     continue;
                 }
-
-
             }
             foreach (var item in macList)
             {
                 Console.WriteLine($"Mac é:  >>  {item.Mac}");
+                await db.MacstoDbs.AddAsync(item);
 
             }
+            await db.SaveChangesAsync();
             return macList;
         }
     }
